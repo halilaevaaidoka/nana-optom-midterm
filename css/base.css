@@ -1,0 +1,159 @@
+/* NANA OPTOM — Shared navy & gold styles */
+
+body {
+    background: #101F35;
+    color: #F5EFE4;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: #D9B76E;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Header */
+
+header,
+footer {
+    background: #243B5A;
+    color: #F5EFE4;
+    text-align: center;
+}
+
+header {
+    border-bottom: 1px solid #D9B76E;
+}
+
+/* Navigation */
+
+.navbar {
+    background: #101F35;
+    border-bottom: 1px solid rgba(217, 183, 110, .55);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+footer a {
+    color: #D9B76E;
+}
+
+.navbar .nav-link {
+    transition: color .2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+footer a:hover {
+    color: #FFFFFF;
+}
+
+.navbar .login-link,
+.navbar .login-link.active {
+    padding: 9px 20px;
+    background: #D9B76E;
+    color: #101F35;
+    border-radius: 8px;
+}
+
+.navbar .login-link:hover {
+    background: #F4D999;
+    color: #101F35;
+}
+
+.navbar .navbar-toggler {
+    border-color: #D9B76E;
+}
+
+/* Main content */
+
+main {
+    background: #192E4B;
+    color: #F5EFE4;
+    border: 1px solid rgba(217, 183, 110, .55);
+    border-radius: 14px;
+}
+
+main h1,
+main h2,
+main h3,
+main a {
+    color: #D9B76E;
+}
+
+main a:hover {
+    color: #FFFFFF;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid rgba(217, 183, 110, .55);
+    padding: 32px 20px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.footer-social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: #101F35;
+    border: 1px solid rgba(217, 183, 110, .7);
+    border-radius: 8px;
+    transition: background .2s ease, color .2s ease;
+}
+
+.footer-social a:hover {
+    background: #D9B76E;
+    color: #101F35;
+}
+
+.footer-social svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer-social .icon-dot {
+    fill: currentColor;
+    stroke: none;
+}
+
+/* States prepared for future JavaScript */
+
+.hidden {
+    display: none;
+}
+
+.active {
+    border-color: #D9B76E;
+}
+
+.selected {
+    background: #D9B76E;
+    color: #101F35;
+}
+
+.error {
+    color: #FFB3B3;
+    border-color: #DC3545;
+}
+
+.success {
+    color: #B8F2C8;
+    border-color: #198754;
+}

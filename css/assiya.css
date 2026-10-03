@@ -1,0 +1,124 @@
+/* NANA OPTOM — About & Feedback */
+
+/* ABOUT — Content Cards */
+
+#about-main section,
+#about-main article {
+    background: #172B46;
+    color: #F5EFE4;
+    border: 1px solid rgba(217, 183, 110, .45);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+}
+
+/* ABOUT — Accent Text */
+
+.brand-year,
+.brand-photo figcaption,
+.facts-section dt {
+    color: #D9B76E;
+    font-weight: 700;
+}
+
+/* ABOUT — Store Photo */
+
+.brand-photo {
+    margin: 0;
+    text-align: center;
+}
+
+.brand-photo img {
+    display: block;
+    margin: 0 auto 16px;
+    border-radius: 10px;
+}
+
+/* ABOUT — Buttons */
+
+.gold-button {
+    margin-top: 12px;
+    padding: 11px 22px;
+    background: #D9B76E;
+    color: #101F35;
+    border: 1px solid #D9B76E;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.gold-button:hover {
+    background: #F4D999;
+    color: #101F35;
+}
+
+/* ABOUT — Lists and Facts */
+
+.order-steps-section li {
+    margin-bottom: 10px;
+}
+
+.facts-section dd {
+    margin-left: 0;
+    color: #F5EFE4;
+}
+
+
+/* FEEDBACK — Form Cards */
+
+.feedback-group {
+    min-width: 0;
+    background: #172B46;
+    border: 1px solid rgba(217, 183, 110, .5);
+    border-radius: 12px;
+}
+
+/* FEEDBACK — Titles */
+
+.feedback-group legend {
+    float: none;
+    width: auto;
+    padding: 0 8px;
+    color: #D9B76E;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* Keep gold as an accent, not on every label */
+
+.feedback-group label {
+    color: #F5EFE4;
+}
+
+/* FEEDBACK — Inputs */
+
+#feedback-main .form-control,
+#feedback-main .form-select {
+    background: #263D5B;
+    color: #FFFFFF;
+    border: 1px solid rgba(217, 183, 110, .65);
+}
+
+#feedback-main .form-control::placeholder {
+    color: #C8C2B8;
+}
+
+#feedback-main .form-control:focus,
+#feedback-main .form-select:focus {
+    background: #263D5B;
+    color: #FFFFFF;
+    border-color: #D9B76E;
+    box-shadow: 0 0 0 3px rgba(217, 183, 110, .14);
+}
+
+/* FEEDBACK — Radio and Checkbox */
+
+#feedback-main .form-check-input:checked {
+    background-color: #D9B76E;
+    border-color: #D9B76E;
+}
+
+#feedback-main .form-check-label {
+    color: #F5EFE4;
+}
