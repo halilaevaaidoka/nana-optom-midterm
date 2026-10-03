@@ -207,7 +207,20 @@ Each team member also reviews pages originally created by the other team member.
 
 ## Quality Pass Results
 
-The final quality pass results will be recorded after all pages are tested and validated.
+## Quality Pass Results
+
+The final quality pass was completed before the Midterm submission.
+
+- All six HTML pages were checked with the W3C HTML Validator.
+- Navigation links between all website pages were tested.
+- Product and store images were checked.
+- Order, Feedback, and Login forms were reviewed.
+- The website was tested at phone and desktop widths.
+- No horizontal overflow was found on the tested mobile layout.
+- The browser console was checked for errors using Live Server.
+- Mobile navigation and the collapsible navbar were tested.
+- Phone and desktop screenshots were prepared for all six pages.
+- Each team member reviewed pages created by the other team member.
 
 ## Screenshots
 
