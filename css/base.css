@@ -1,98 +1,113 @@
-/* NANA OPTOM — Shared navy & gold styles */
+
+/* NANA OPTOM — CLEAN NAVY & GOLD DESIGN */
+
+:root {
+    --navy: #101f35;
+    --navy-light: #192e4b;
+    --navy-card: #203653;
+    --gold: #f4bf63;
+    --text: #f5efe4;
+    --muted: #b9c7d8;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background: #101F35;
-    color: #F5EFE4;
+    margin: 0;
+    background: var(--navy);
+    color: var(--text);
     font-family: "Trebuchet MS", Arial, sans-serif;
     line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
-    color: #D9B76E;
+h1, h2, h3 {
+    color: var(--gold);
     font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Header */
+/* HEADER */
 
 header,
 footer {
-    background: #243B5A;
-    color: #F5EFE4;
+    background: #243b5a;
+    color: var(--text);
     text-align: center;
 }
 
 header {
-    border-bottom: 1px solid #D9B76E;
+    border-bottom: 1px solid var(--gold);
 }
 
-/* Navigation */
+footer {
+    border-top: 1px solid rgba(244, 191, 99, 0.4);
+    padding: 32px 20px;
+}
+
+footer a {
+    color: var(--gold);
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* NAVIGATION */
 
 .navbar {
-    background: #101F35;
-    border-bottom: 1px solid rgba(217, 183, 110, .55);
+    background: var(--navy);
+    border-bottom: 1px solid rgba(244, 191, 99, 0.4);
 }
 
 .navbar .navbar-brand,
-.navbar .nav-link,
-footer a {
-    color: #D9B76E;
-}
-
 .navbar .nav-link {
-    transition: color .2s ease;
+    color: var(--gold);
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link.active,
-footer a:hover {
-    color: #FFFFFF;
+.navbar .nav-link.active {
+    color: white;
 }
 
 .navbar .login-link,
 .navbar .login-link.active {
     padding: 9px 20px;
-    background: #D9B76E;
-    color: #101F35;
+    background: var(--gold);
+    color: var(--navy);
     border-radius: 8px;
 }
 
 .navbar .login-link:hover {
-    background: #F4D999;
-    color: #101F35;
+    background: #ffda91;
+    color: var(--navy);
 }
 
 .navbar .navbar-toggler {
-    border-color: #D9B76E;
+    border-color: var(--gold);
 }
 
-/* Main content */
+/* MAIN */
 
 main {
-    background: #192E4B;
-    color: #F5EFE4;
-    border: 1px solid rgba(217, 183, 110, .55);
-    border-radius: 14px;
+    background: var(--navy-light);
+    color: var(--text);
+    border: 1px solid rgba(244, 191, 99, 0.4);
+    border-radius: 16px;
 }
 
 main h1,
 main h2,
 main h3,
 main a {
-    color: #D9B76E;
+    color: var(--gold);
 }
 
 main a:hover {
-    color: #FFFFFF;
+    color: white;
 }
 
-/* Footer */
-
-footer {
-    border-top: 1px solid rgba(217, 183, 110, .55);
-    padding: 32px 20px;
-}
+/* SOCIAL ICONS */
 
 .footer-social {
     display: flex;
@@ -107,15 +122,15 @@ footer {
     align-items: center;
     width: 48px;
     height: 48px;
-    background: #101F35;
-    border: 1px solid rgba(217, 183, 110, .7);
-    border-radius: 8px;
-    transition: background .2s ease, color .2s ease;
+    background: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
 }
 
 .footer-social a:hover {
-    background: #D9B76E;
-    color: #101F35;
+    background: var(--gold);
+    color: var(--navy);
 }
 
 .footer-social svg {
@@ -133,27 +148,376 @@ footer {
     stroke: none;
 }
 
-/* States prepared for future JavaScript */
+/* COMMON STATES */
 
 .hidden {
     display: none;
 }
 
 .active {
-    border-color: #D9B76E;
+    border-color: var(--gold);
 }
 
 .selected {
-    background: #D9B76E;
-    color: #101F35;
+    background: var(--gold);
+    color: var(--navy);
 }
 
 .error {
-    color: #FFB3B3;
-    border-color: #DC3545;
+    color: #ffb3b3;
+    border-color: #dc3545;
 }
 
 .success {
-    color: #B8F2C8;
+    color: #b8f2c8;
     border-color: #198754;
+}
+
+/* =========================================
+   ORDER PAGE — FIXED LAYOUT
+========================================= */
+
+#order-main {
+    width: calc(100% - 24px);
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#order-section {
+    width: 100%;
+    background: var(--navy-light);
+    border: 1px solid rgba(244, 191, 99, 0.25);
+    border-radius: 18px;
+    padding: 28px;
+}
+
+#order-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Three equal, full-width columns */
+
+#order-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* CRITICAL FIX: Fieldsets must fill columns */
+
+#order-form > fieldset {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid rgba(244, 191, 99, 0.4);
+    border-radius: 15px;
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+/* Fieldset titles */
+
+#order-form > fieldset > legend {
+    float: none;
+    display: table;
+    width: auto;
+    max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Form groups */
+
+#order-form fieldset > div,
+#order-form .mb-3,
+#order-form .form-group {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Inputs */
+
+#order-form input:not([type="radio"]):not([type="checkbox"]),
+#order-form select,
+#order-form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    background: #263f5f;
+    color: white;
+    border: 1px solid #cba45d;
+    border-radius: 10px;
+}
+
+#order-form input::placeholder,
+#order-form textarea::placeholder {
+    color: #c2cedc;
+    opacity: 1;
+}
+
+#order-form input:focus,
+#order-form select:focus,
+#order-form textarea:focus {
+    background: #304c70;
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(244, 191, 99, 0.15);
+    outline: none;
+}
+
+#order-form select {
+    color-scheme: dark;
+}
+
+#order-form select option {
+    background: #263f5f;
+    color: white;
+}
+
+/* Labels */
+
+#order-form label {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+#order-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Bootstrap rows inside form */
+
+#order-form .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#order-form .row > * {
+    min-width: 0;
+}
+
+/* Radio and checkbox */
+
+#order-form .form-check-input {
+    background-color: #263f5f;
+    border-color: var(--gold);
+}
+
+#order-form .form-check-input:checked {
+    background-color: var(--gold);
+    border-color: var(--gold);
+}
+
+/* Buttons */
+
+#order-form button {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#order-form button[type="submit"] {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+}
+
+#order-form button[type="submit"]:hover {
+    background: #ffda91;
+}
+
+/* =========================================
+   CART SUMMARY
+========================================= */
+
+.nana-cart-summary {
+    background: var(--navy-card);
+    border: 1px solid rgba(244, 191, 99, 0.3);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.nana-cart-summary h3 {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+/* =========================================
+   ORDER CONFIRMATION
+========================================= */
+
+#order-confirmation.nana-premium {
+    background: #14243b;
+    border: 1px solid rgba(244, 191, 99, 0.35);
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 24px;
+}
+
+#order-confirmation.nana-premium h3 {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+#order-confirmation.nana-premium .list-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+#order-confirmation.nana-premium .list-group-item {
+    background: var(--navy-card);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+#order-confirmation.nana-premium .list-group-item strong {
+    color: var(--gold);
+}
+
+#order-confirmation.nana-premium .list-group-item:has(ul) {
+    grid-column: 1 / -1;
+}
+
+#order-confirmation.nana-premium .list-group-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+#order-confirmation.nana-premium .list-group-item li {
+    padding: 9px 12px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--gold);
+    border-radius: 7px;
+}
+
+#order-confirmation.nana-premium .list-group-item.fw-bold {
+    grid-column: 1 / -1;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+#about-main input[type="search"],
+#about-main input[type="text"],
+#about-main .form-control,
+#about-main .form-select,
+#about-main select {
+    background: #243b5a;
+    color: white;
+    border: 1px solid #cba45d;
+    border-radius: 12px;
+    padding: 12px 16px;
+    min-height: 48px;
+}
+
+#about-main input::placeholder {
+    color: var(--muted);
+    opacity: 1;
+}
+
+#about-main input:focus,
+#about-main select:focus {
+    background: #304c70;
+    color: white;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(244, 191, 99, 0.15);
+}
+
+#about-main select {
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+#about-main select option {
+    background: #243b5a;
+    color: white;
+}
+
+#about-main .text-muted,
+#about-main .text-secondary {
+    color: var(--muted) !important;
+}
+
+#about-main .card {
+    background: #1b304d;
+    color: white;
+    border: 1px solid rgba(244, 191, 99, 0.25);
+    border-radius: 14px;
+}
+
+#about-main .card h3,
+#about-main .card h4,
+#about-main .card h5 {
+    color: var(--gold);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+    #order-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #order-form > fieldset:nth-of-type(3) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    #order-main {
+        width: calc(100% - 16px);
+    }
+
+    #order-section {
+        padding: 16px;
+    }
+
+    #order-form {
+        grid-template-columns: 1fr;
+    }
+
+    #order-form > fieldset,
+    #order-form > fieldset:nth-of-type(3) {
+        grid-column: 1;
+        padding: 16px;
+    }
+
+    #order-confirmation.nana-premium .list-group {
+        grid-template-columns: 1fr;
+    }
 }

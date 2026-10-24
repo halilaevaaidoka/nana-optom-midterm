@@ -1,0 +1,419 @@
+
+/* NANA OPTOM — UNIFIED INNER PAGES */
+/* Products, Order, About, Feedback */
+
+:root {
+    --inner-bg: #061a2d;
+    --inner-card: #0e2945;
+    --inner-input: #173653;
+    --inner-gold: #f4bf63;
+    --inner-text: #f5efe4;
+    --inner-muted: #b9c7d8;
+    --inner-border: rgba(244, 191, 99, 0.28);
+}
+
+/* GENERAL */
+
+body:not(.home-page) {
+    background: var(--inner-bg);
+    color: var(--inner-text);
+}
+
+/* SAME NAVBAR ON ALL PAGES */
+
+body:not(.home-page) .navbar {
+    background: #06182b;
+    border-bottom: 1px solid var(--inner-border);
+    min-height: 82px;
+}
+
+body:not(.home-page) .navbar-brand {
+    color: var(--inner-gold);
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+body:not(.home-page) .navbar .nav-link {
+    color: #f5efe4;
+    font-weight: 600;
+}
+
+body:not(.home-page) .navbar .nav-link:hover,
+body:not(.home-page) .navbar .nav-link.active {
+    color: var(--inner-gold);
+}
+
+body:not(.home-page) .navbar .login-link {
+    background: var(--inner-gold);
+    color: #06182b;
+    border-radius: 9px;
+    padding: 9px 18px;
+}
+
+/* MAIN PAGE LAYOUT */
+
+#products-main,
+#order-main,
+#about-main,
+#feedback-main {
+    width: calc(100% - 40px);
+    max-width: 1400px;
+    margin: 35px auto !important;
+    padding: 25px !important;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: var(--inner-text);
+}
+
+/* UNIFIED HEADINGS */
+
+#products-main h1,
+#products-main h2,
+#order-main h1,
+#order-main h2,
+#about-main h1,
+#about-main h2,
+#feedback-main h1,
+#feedback-main h2 {
+    color: var(--inner-gold);
+    font-family: Georgia, serif;
+}
+
+#products-main h2,
+#about-main h2,
+#feedback-main h2,
+#order-main h2 {
+    font-size: clamp(28px, 3vw, 40px);
+}
+
+#products-main p,
+#order-main p,
+#about-main p,
+#feedback-main p {
+    line-height: 1.7;
+}
+
+/* UNIFIED CARDS */
+
+#products-main .price-section,
+#products-main .product-gallery,
+#products-main #order-action,
+#about-main article,
+#about-main section,
+#order-main .nana-form-card,
+#feedback-main .feedback-group {
+    background: var(--inner-card);
+    border: 1px solid var(--inner-border);
+    border-radius: 16px;
+    color: var(--inner-text);
+    padding: 28px;
+}
+
+/* ABOUT PAGE */
+
+#about-main .quick-links {
+    background: var(--inner-card);
+    border: 1px solid var(--inner-border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+#about-main .brand-photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+#about-main .brand-year,
+#about-main dt {
+    color: var(--inner-gold);
+}
+
+/* PRODUCTS TABLE */
+
+#products-main .table {
+    --bs-table-bg: #102b46;
+    --bs-table-color: #f5efe4;
+    --bs-table-border-color: #34506a;
+    --bs-table-hover-bg: #1b3a59;
+    --bs-table-hover-color: #ffffff;
+}
+
+#products-main .table thead th {
+    background: #405a79;
+    color: white;
+    padding: 16px;
+}
+
+#products-main .table td {
+    padding: 15px;
+}
+
+#products-main .product-gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: #f7f5f0;
+    border-radius: 10px;
+}
+
+/* FORM INPUTS */
+
+#order-main .form-control,
+#order-main .form-select,
+#feedback-main .form-control,
+#feedback-main .form-select,
+#products-main .form-control,
+#products-main .form-select {
+    background: var(--inner-input);
+    color: #ffffff;
+    border: 1px solid #b18c4e;
+    border-radius: 10px;
+    min-height: 50px;
+    padding: 11px 14px;
+}
+
+#order-main .form-control::placeholder,
+#feedback-main .form-control::placeholder,
+#products-main .form-control::placeholder {
+    color: #b9c7d8;
+    opacity: 1;
+}
+
+#order-main .form-control:focus,
+#order-main .form-select:focus,
+#feedback-main .form-control:focus,
+#feedback-main .form-select:focus,
+#products-main .form-control:focus,
+#products-main .form-select:focus {
+    background: #204362;
+    color: white;
+    border-color: var(--inner-gold);
+    box-shadow: 0 0 0 3px rgba(244,191,99,.15);
+}
+
+#order-main label,
+#feedback-main label {
+    color: var(--inner-text);
+}
+
+#order-main legend,
+#feedback-main legend {
+    color: var(--inner-gold);
+    font-weight: 700;
+}
+
+/* FEEDBACK CARDS */
+
+#feedback-main .feedback-group {
+    height: 100%;
+}
+
+#feedback-main .feedback-group legend {
+    font-size: 20px;
+}
+
+#feedback-main .feedback-group legend::before {
+    background: var(--inner-gold);
+    color: #06182b;
+}
+
+/* ORDER CARDS */
+
+#order-main .nana-form-card {
+    min-width: 0;
+}
+
+#order-main .step-badge {
+    background: var(--inner-gold);
+    color: #06182b;
+}
+
+/* BUTTONS */
+
+#products-main .btn-warning,
+#about-main .btn-warning,
+#about-main .gold-button,
+#feedback-main .btn-warning,
+#order-main button[type="submit"] {
+    background: var(--inner-gold);
+    border-color: var(--inner-gold);
+    color: #06182b;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+#products-main .btn-warning:hover,
+#about-main .btn-warning:hover,
+#about-main .gold-button:hover,
+#feedback-main .btn-warning:hover,
+#order-main button[type="submit"]:hover {
+    background: #ffda91;
+    border-color: #ffda91;
+    color: #06182b;
+}
+
+#about-main .btn-outline-warning,
+#feedback-main .btn-outline-warning {
+    color: var(--inner-gold);
+    border-color: var(--inner-gold);
+    border-radius: 10px;
+}
+
+#about-main .btn-outline-warning:hover,
+#feedback-main .btn-outline-warning:hover {
+    background: var(--inner-gold);
+    color: #06182b;
+}
+
+/* FOOTER */
+
+body:not(.home-page) footer {
+    background: #06182b;
+    border-top: 1px solid var(--inner-border);
+    padding: 32px 20px;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    #products-main,
+    #order-main,
+    #about-main,
+    #feedback-main {
+        width: calc(100% - 24px);
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #products-main .price-section,
+    #products-main .product-gallery,
+    #products-main #order-action,
+    #about-main article,
+    #about-main section,
+    #order-main .nana-form-card,
+    #feedback-main .feedback-group {
+        padding: 18px;
+    }
+
+    body:not(.home-page) .navbar-brand {
+        font-size: 22px;
+    }
+
+    #about-main .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* CUSTOMER REVIEWS */
+
+#customer-reviews {
+    width: 100%;
+    margin: 65px auto 40px;
+}
+
+#customer-reviews > h2 {
+    color: #f4bf63;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px !important;
+}
+
+#customer-reviews .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+#customer-reviews .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    padding: 26px;
+
+    background: #193754;
+    border: 1px solid rgba(244, 191, 99, 0.35);
+    border-radius: 14px;
+
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#customer-reviews .review-card:hover {
+    transform: translateY(-5px);
+    border-color: #f4bf63;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+#customer-reviews .review-card h3 {
+    color: #f4bf63;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#customer-reviews .review-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #b9c7d8;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#customer-reviews .review-stars {
+    color: #f4bf63;
+    font-size: 22px;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+#customer-reviews .review-card p {
+    color: #e8edf4;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+#customer-reviews .review-card time {
+    display: block;
+    margin-top: auto;
+    padding-top: 12px;
+    color: #a9bdd2;
+    font-size: 13px;
+}
+
+@media (max-width: 991px) {
+    #customer-reviews .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #customer-reviews .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #customer-reviews > h2 {
+        font-size: 32px;
+    }
+
+    #customer-reviews .review-card {
+        padding: 22px;
+    }
+}

@@ -1,34 +1,26 @@
 <!DOCTYPE html>
-<!-- Author: Aida Khalila -->
+<!-- Authors: Aida Khalila and Assiya Yesmagambet -->
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Order cosmetics from NANA OPTOM">
-    <meta name="author" content="Aida Khalila">
+    <meta name="description" content="NANA OPTOM wholesale cosmetics order page">
     <title>NANA OPTOM | Order</title>
 
-    <!-- Bootstrap 5.3.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/aida.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="css/inner-pages.css">
+    
 </head>
 
-<body>
-
-<header class="text-center py-4 px-3">
-    <h1 class="display-5 fw-bold">Order NANA OPTOM Products</h1>
-    <p class="lead mb-0">
-        Choose your favorite cosmetics and place an order.
-    </p>
-</header>
+<body class="order-page">
 
 
-<!-- Bootstrap responsive navigation -->
+<!-- Shared Bootstrap Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
 
@@ -43,55 +35,38 @@
                 aria-controls="mainNavbar"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-
             <span class="navbar-toggler-icon"></span>
         </button>
 
-
         <div class="collapse navbar-collapse" id="mainNavbar">
-
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        Home
-                    </a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="products.html">
-                        Products
-                    </a>
+                    <a class="nav-link" href="products.html">Products</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link active"
                        aria-current="page"
-                       href="order.html">
-                        Order
-                    </a>
+                       href="order.html">Order</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">
-                        About
-                    </a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="feedback.html">
-                        Feedback
-                    </a>
+                    <a class="nav-link" href="feedback.html">Feedback</a>
                 </li>
 
             </ul>
-
         </div>
 
-
-        <!-- Login remains visible outside the collapsed menu -->
-        <a class="nav-link login-link ms-3"
-           href="login.html">
+        <a class="nav-link login-link ms-3" href="login.html">
             Login
         </a>
 
@@ -99,409 +74,327 @@
 </nav>
 
 
-<main id="order-main" class="container my-4 p-4">
+<main id="order-main" class="container">
+    <section id="order-section">
 
-    <section id="order-section" class="order-section">
-
-        <h2>Order Form</h2>
-
-        <p>
-            Complete the form below to prepare your order.
-            Your order confirmation will appear below the form.
-        </p>
-
-
-        <!-- Prepared for future JavaScript -->
-        <form id="order-form"
-              class="order-form row g-4">
-
-            <!-- Customer Information -->
-            <div class="col-12 col-lg-4">
-
-                <fieldset class="form-group h-100">
-
-                    <legend>Customer Information</legend>
-
-
-                    <div class="mb-3">
-
-                        <label for="customer-name"
-                               class="form-label">
-                            Full Name:
-                        </label>
-
-                        <input type="text"
-                               class="form-control"
-                               id="customer-name"
-                               name="customer-name"
-                               placeholder="Enter your full name"
-                               required>
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label for="customer-email"
-                               class="form-label">
-                            Email:
-                        </label>
-
-                        <input type="email"
-                               class="form-control"
-                               id="customer-email"
-                               name="customer-email"
-                               placeholder="Enter your email"
-                               required>
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label for="customer-phone"
-                               class="form-label">
-                            Phone Number:
-                        </label>
-
-                        <input type="tel"
-                               class="form-control"
-                               id="customer-phone"
-                               name="customer-phone"
-                               placeholder="+7 700 000 00 00"
-                               required>
-
-                    </div>
-
-                </fieldset>
-
+        <div class="order-heading">
+            <div>
+                <h2>Order Form</h2>
+                <p>
+                    Complete the form below to prepare your order.
+                    Your order confirmation will appear below the form.
+                </p>
             </div>
+        </div>
 
+        <form id="order-form" novalidate aria-label="Order form">
 
-            <!-- Product Information -->
-            <div class="col-12 col-lg-4">
+            <!-- CUSTOMER INFORMATION -->
+            <fieldset class="nana-form-card">
+                <legend>
+                    <span class="step-badge">1</span>
+                    <span class="legend-title">Customer Information</span>
+                    <span class="card-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 21v-2a7 7 0 0 0-14 0v2M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/>
+                        </svg>
+                    </span>
+                </legend>
 
-                <fieldset class="form-group h-100">
+                <div class="mb-3">
+                    <label class="form-label" for="customer-name">
+                        Full Name
+                    </label>
+                    <input class="form-control"
+                           id="customer-name"
+                           name="customer-name"
+                           type="text"
+                           placeholder="Enter your full name"
+                           autocomplete="name"
+                           required>
+                </div>
 
-                    <legend>Product Information</legend>
+                <div class="mb-3">
+                    <label class="form-label" for="customer-email">
+                        Email
+                    </label>
+                    <input class="form-control"
+                           id="customer-email"
+                           name="customer-email"
+                           type="email"
+                           placeholder="Enter your email"
+                           autocomplete="email"
+                           required>
+                </div>
 
+                <div class="mb-3">
+                    <label class="form-label" for="customer-phone">
+                        Phone Number
+                    </label>
+                    <input class="form-control"
+                           id="customer-phone"
+                           name="customer-phone"
+                           type="tel"
+                           placeholder="+7 700 000 00 00"
+                           autocomplete="tel"
+                           required>
+                </div>
 
-                    <div class="mb-3">
+                <div class="mb-3">
+                    <label class="form-label" for="customer-city">
+                        City
+                    </label>
+                    <input id="customer-city"
+                           name="customer-city"
+                           type="hidden">
+                </div>
 
-                        <label for="product"
-                               class="form-label">
-                            Choose a Product:
-                        </label>
+                <div class="mb-3" id="address-group">
+                    <label class="form-label" for="customer-address">
+                        Delivery Address
+                    </label>
+                    <input class="form-control"
+                           id="customer-address"
+                           name="customer-address"
+                           type="text"
+                           placeholder="Street, building, apartment"
+                           autocomplete="street-address">
+                </div>
+            </fieldset>
 
-                        <select class="form-select"
-                                id="product"
-                                name="product"
-                                required>
+            <!-- PRODUCT INFORMATION -->
+            <fieldset class="nana-form-card">
+                <legend>
+                    <span class="step-badge">2</span>
+                    <span class="legend-title">Product Information</span>
+                    <span class="card-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 8h14l1 13H4L5 8ZM9 9V6a3 3 0 0 1 6 0v3"/>
+                        </svg>
+                    </span>
+                </legend>
 
-                            <option value="">
-                                Select a product
-                            </option>
+                <div class="mb-3">
+                    <label class="form-label" for="product">
+                        Product
+                    </label>
 
-                            <option value="beauty-blender">
-                                Beauty Blender
-                            </option>
+                    <select class="form-select"
+                            id="product"
+                            name="product"
+                            required>
+                        <option value="">Select a product</option>
+                        <option value="beauty-blender">Beauty Blender</option>
+                        <option value="lip-liner">Lip Liner</option>
+                        <option value="mascara">Mascara</option>
+                        <option value="mini-blush">Mini Blush</option>
+                        <option value="lip-gloss">Lip Gloss</option>
+                        <option value="bb-cream">BB Cream</option>
+                        <option value="stick-blush">Stick Blush</option>
+                        <option value="contour">Contour</option>
+                        <option value="round-lab-spf">Round Lab SPF</option>
+                        <option value="celimax-toner">Celimax Toner</option>
+                        <option value="mini-lip-gloss-set">Mini Lip Gloss Set</option>
+                    </select>
+                </div>
 
-                            <option value="lip-liner">
-                                Lip Liner
-                            </option>
+                <div class="mb-3">
+                    <label class="form-label" for="quantity">
+                        Quantity
+                    </label>
 
-                            <option value="mascara">
-                                Mascara
-                            </option>
+                    <div class="quantity-control">
+                        <button type="button"
+                                id="quantity-minus"
+                                aria-label="Decrease quantity">
+                            −
+                        </button>
 
-                            <option value="mini-blush">
-                                Mini Blush
-                            </option>
-
-                            <option value="lip-gloss">
-                                Lip Gloss
-                            </option>
-
-                            <option value="bb-cream">
-                                BB Cream
-                            </option>
-
-                            <option value="stick-blush">
-                                Stick Blush
-                            </option>
-
-                            <option value="contour">
-                                Contour
-                            </option>
-
-                            <option value="round-lab-spf">
-                                Round Lab SPF
-                            </option>
-
-                            <option value="celimax-toner">
-                                Celimax Toner
-                            </option>
-
-                            <option value="mini-lip-gloss-set">
-                                Mini Lip Gloss Set
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label for="quantity"
-                               class="form-label">
-                            Quantity:
-                        </label>
-
-                        <input type="number"
-                               class="form-control"
+                        <input class="form-control"
                                id="quantity"
                                name="quantity"
+                               type="number"
                                min="1"
-                               placeholder="Enter quantity"
+                               max="9999"
+                               step="1"
+                               value="1"
                                required>
 
+                        <button type="button"
+                                id="quantity-plus"
+                                aria-label="Increase quantity">
+                            +
+                        </button>
                     </div>
+                </div>
 
+                <div class="mb-3">
+                    <label class="form-label" for="order-date">
+                        Order Date
+                    </label>
 
-                    <div class="mb-3">
+                    <input class="form-control"
+                           id="order-date"
+                           name="order-date"
+                           type="date"
+                           required>
+                </div>
+            </fieldset>
 
-                        <label for="order-date"
-                               class="form-label">
-                            Order Date:
-                        </label>
+            <!-- DELIVERY AND PREFERENCES -->
+            <fieldset class="nana-form-card">
+                <legend>
+                    <span class="step-badge">3</span>
+                    <span class="legend-title">Delivery &amp; Preferences</span>
+                    <span class="card-symbol" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 6h11v12H3ZM14 10h4l3 4v4h-7M6 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                        </svg>
+                    </span>
+                </legend>
 
-                        <input type="date"
-                               class="form-control"
-                               id="order-date"
-                               name="order-date"
-                               required>
+                <p class="mb-2" id="delivery-label">
+                    Delivery Method:
+                </p>
 
-                    </div>
-
-                </fieldset>
-
-            </div>
-
-
-            <!-- Order Preferences -->
-            <div class="col-12 col-lg-4">
-
-                <fieldset class="form-group h-100">
-
-                    <legend>Order Preferences</legend>
-
-
-                    <p class="mb-2">
-                        Delivery Method:
-                    </p>
-
+                <div class="delivery-options"
+                     role="group"
+                     aria-labelledby="delivery-label">
 
                     <div class="form-check">
-
                         <input class="form-check-input"
-                               type="radio"
                                id="delivery"
+                               type="radio"
                                name="delivery-method"
                                value="delivery"
+                               checked
                                required>
 
-                        <label class="form-check-label"
-                               for="delivery">
+                        <label class="form-check-label" for="delivery">
                             Delivery
                         </label>
-
                     </div>
 
-
                     <div class="form-check mb-3">
-
                         <input class="form-check-input"
-                               type="radio"
                                id="pickup"
+                               type="radio"
                                name="delivery-method"
                                value="pickup">
 
-                        <label class="form-check-label"
-                               for="pickup">
+                        <label class="form-check-label" for="pickup">
                             Pickup
                         </label>
-
                     </div>
+                </div>
 
+                <div class="form-check mb-3 updates-option">
+                    <input class="form-check-input"
+                           id="updates"
+                           type="checkbox"
+                           name="updates">
 
-                    <div class="form-check mb-3">
+                    <label class="form-check-label" for="updates">
+                        Receive product updates
+                    </label>
+                </div>
 
-                        <input class="form-check-input"
-                               type="checkbox"
-                               id="updates"
-                               name="updates">
+                <div class="mb-3">
+                    <label class="form-label" for="notes">
+                        Additional Notes
+                    </label>
 
-                        <label class="form-check-label"
-                               for="updates">
-                            I would like to receive product updates.
-                        </label>
+                    <textarea class="form-control"
+                              id="notes"
+                              name="notes"
+                              rows="3"
+                              placeholder="Additional information about your order"></textarea>
+                </div>
 
-                    </div>
+                <div class="form-actions">
+                    <button id="submit-order"
+                            class="btn"
+                            type="submit">
+                        Submit Order
+                    </button>
 
-
-                    <div class="mb-3">
-
-                        <label for="notes"
-                               class="form-label">
-                            Order Notes:
-                        </label>
-
-                        <textarea class="form-control"
-                                  id="notes"
-                                  name="notes"
-                                  rows="4"
-                                  placeholder="Enter additional information about your order"></textarea>
-
-                    </div>
-
-
-                    <div class="form-actions">
-
-                        <button id="submit-order"
-                                type="submit"
-                                class="btn">
-                            Submit Order
-                        </button>
-
-                        <button id="reset-order"
-                                type="reset"
-                                class="btn">
-                            Reset Form
-                        </button>
-
-                    </div>
-
-                </fieldset>
-
-            </div>
+                    <button id="reset-order"
+                            class="btn"
+                            type="reset">
+                        Reset
+                    </button>
+                </div>
+            </fieldset>
 
         </form>
 
+        <!-- SUMMARY AND CONFIRMATION -->
+        <div class="order-bottom-grid">
 
-        <!--
-            Future JavaScript will display the submitted
-            order result in this area.
-        -->
-        <div id="order-confirmation"
-             class="mt-4"
-             aria-live="polite">
+            <section class="nana-cart-summary"
+                     id="cart-summary"
+                     aria-label="Order summary">
+            </section>
 
-            <h3>Order Confirmation</h3>
-
-            <p>
-                After submitting the form, your order confirmation
-                will appear here.
-            </p>
+            <div id="order-confirmation" aria-live="polite">
+                <h3>Order Confirmation</h3>
+                <p>Your order confirmation will appear here.</p>
+            </div>
 
         </div>
-
     </section>
-
 </main>
 
-
 <footer>
-
     <div class="footer-social">
 
-        <!-- Instagram -->
         <a href="https://www.instagram.com/nana.optom/"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="Instagram"
            title="Instagram">
-
-            <svg viewBox="0 0 24 24"
-                 aria-hidden="true">
-
-                <rect x="3"
-                      y="3"
-                      width="18"
-                      height="18"
-                      rx="5">
-                </rect>
-
-                <circle cx="12"
-                        cy="12"
-                        r="4">
-                </circle>
-
-                <circle cx="17.5"
-                        cy="6.5"
-                        r="1"
-                        class="icon-dot">
-                </circle>
-
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1" class="icon-dot"></circle>
             </svg>
-
         </a>
 
-
-        <!-- TikTok -->
-        <a href="https://www.tiktok.com/@nana.optom?_r=1&amp;_t=ZS-9A1kYobpDSX"
+        <a href="https://www.tiktok.com/@nana.optom"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="TikTok"
            title="TikTok">
-
-            <svg viewBox="0 0 24 24"
-                 aria-hidden="true">
-
+            <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14 3v11.5a4.5 4.5 0 1 1-4.5-4.5"></path>
-
                 <path d="M14 3c.7 3.2 2.5 4.8 6 5"></path>
-
             </svg>
-
         </a>
 
-
-        <!-- WhatsApp -->
         <a href="https://wa.me/77781003727"
            target="_blank"
            rel="noopener noreferrer"
            aria-label="WhatsApp"
            title="WhatsApp">
-
-            <svg viewBox="0 0 24 24"
-                 aria-hidden="true">
-
+            <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20.5l1.5-5.1A8.5 8.5 0 1 1 20.5 11.5Z"></path>
-
                 <path d="M8.5 8.5c.5 3 3 5.5 6 6l1.5-1.5"></path>
-
             </svg>
-
         </a>
 
     </div>
 
-
     <p>
         Contact:
-        <a href="tel:+77757562192">
-            +7 775 756 21 92
-        </a>
+        <a href="tel:+77757562192">+7 775 756 21 92</a>
     </p>
 
     <p>&copy; 2026 NANA OPTOM</p>
-
 </footer>
 
-
-<!-- Bootstrap JavaScript for the mobile menu -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js" defer></script>
+<script src="js/order.js" defer></script>
 
 </body>
 </html>

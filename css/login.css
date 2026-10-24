@@ -99,3 +99,132 @@
     margin-bottom: 0;
     color: #D5D8DE;
 }
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 55px;
+}
+
+.password-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #d8b568;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.password-eye:hover {
+    color: #ffffff;
+}
+
+.password-eye:focus-visible {
+    outline: 2px solid #d8b568;
+    border-radius: 5px;
+}
+/* LOGIN TOAST NOTIFICATION */
+
+.login-toast {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    width: 370px;
+    max-width: calc(100vw - 30px);
+    padding: 20px;
+
+    background: #193653;
+    color: #ffffff;
+
+    border: 1px solid #d9b76e;
+    border-left: 5px solid #d9b76e;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+
+    transition: all 0.35s ease;
+}
+
+.login-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.login-toast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+
+    background: #d9b76e;
+    color: #101f35;
+
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.login-toast strong {
+    display: block;
+    color: #f4bf63;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.login-toast p {
+    margin: 0;
+    color: #d6e1ed;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.login-toast-close {
+    margin-left: auto;
+    padding: 0;
+
+    background: none;
+    border: none;
+    color: #ffffff;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.login-toast.error {
+    border-color: #ff7777;
+}
+
+.login-toast.error .login-toast-icon {
+    background: #ff7777;
+}
+
+@media (max-width: 576px) {
+    .login-toast {
+        top: 75px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+    }
+}
