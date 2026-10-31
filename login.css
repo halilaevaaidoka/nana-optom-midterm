@@ -1,0 +1,230 @@
+/* NANA OPTOM — Login */
+
+#login-main {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Card */
+
+.login-section {
+    width: 420px;
+    max-width: 100%;
+    padding: 36px;
+    background: #172B46;
+    color: #F5EFE4;
+    border: 1px solid rgba(217, 183, 110, .5);
+    border-radius: 14px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, .22);
+}
+
+/* Title */
+
+.login-section h2 {
+    color: #D9B76E;
+    margin-bottom: 12px;
+}
+
+/* Description */
+
+.login-section > p {
+    color: #D5D8DE;
+    margin-bottom: 24px;
+}
+
+/* Labels */
+
+.login-form .form-label,
+.login-form .form-check-label {
+    color: #F5EFE4;
+}
+
+/* Inputs */
+
+.login-form .form-control {
+    background: #263D5B;
+    color: #FFFFFF;
+    border: 1px solid rgba(217, 183, 110, .65);
+}
+
+.login-form .form-control::placeholder {
+    color: #C8C2B8;
+}
+
+.login-form .form-control:focus {
+    background: #263D5B;
+    color: #FFFFFF;
+    border-color: #D9B76E;
+    box-shadow: 0 0 0 3px rgba(217, 183, 110, .14);
+}
+
+/* Checkbox */
+
+.login-form .form-check-input:checked {
+    background-color: #D9B76E;
+    border-color: #D9B76E;
+}
+
+/* Login Button */
+
+.login-form .btn {
+    background: #D9B76E;
+    color: #101F35;
+    border: 1px solid #D9B76E;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background .2s ease, color .2s ease;
+}
+
+.login-form .btn:hover {
+    background: #F4D999;
+    color: #101F35;
+}
+
+/* Future Login Result */
+
+#login-result {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(217, 183, 110, .35);
+}
+
+#login-result h3 {
+    margin-bottom: 8px;
+}
+
+#login-result p {
+    margin-bottom: 0;
+    color: #D5D8DE;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 55px;
+}
+
+.password-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #d8b568;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.password-eye:hover {
+    color: #ffffff;
+}
+
+.password-eye:focus-visible {
+    outline: 2px solid #d8b568;
+    border-radius: 5px;
+}
+/* LOGIN TOAST NOTIFICATION */
+
+.login-toast {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    width: 370px;
+    max-width: calc(100vw - 30px);
+    padding: 20px;
+
+    background: #193653;
+    color: #ffffff;
+
+    border: 1px solid #d9b76e;
+    border-left: 5px solid #d9b76e;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+
+    transition: all 0.35s ease;
+}
+
+.login-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.login-toast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+
+    background: #d9b76e;
+    color: #101f35;
+
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.login-toast strong {
+    display: block;
+    color: #f4bf63;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.login-toast p {
+    margin: 0;
+    color: #d6e1ed;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.login-toast-close {
+    margin-left: auto;
+    padding: 0;
+
+    background: none;
+    border: none;
+    color: #ffffff;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.login-toast.error {
+    border-color: #ff7777;
+}
+
+.login-toast.error .login-toast-icon {
+    background: #ff7777;
+}
+
+@media (max-width: 576px) {
+    .login-toast {
+        top: 75px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+    }
+}

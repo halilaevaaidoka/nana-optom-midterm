@@ -1,0 +1,110 @@
+/* NANA OPTOM — Products & Order */
+
+/* PRODUCTS — Price Table */
+
+#products-main .table {
+    --bs-table-bg: #263D5B;
+    --bs-table-color: #F5EFE4;
+    --bs-table-border-color: rgba(217, 183, 110, .45);
+    --bs-table-hover-bg: #304A6B;
+    --bs-table-hover-color: #FFFFFF;
+}
+
+#products-main .table thead th {
+    background: #405A79;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* PRODUCTS — Gallery */
+
+.product-gallery figure {
+    margin: 0;
+    background: #223955;
+    color: #D9B76E;
+    border-color: rgba(217, 183, 110, .45);
+    border-radius: 12px;
+}
+
+.product-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: #F7F5F0;
+    border-radius: 8px;
+}
+
+/* ORDER — Form Cards */
+
+#order-main .form-group {
+    min-width: 0;
+    padding: 22px;
+    background: #172B46;
+    border: 1px solid rgba(217, 183, 110, .5);
+    border-radius: 12px;
+}
+
+#order-main legend {
+    float: none;
+    width: auto;
+    padding: 0 8px;
+    color: #D9B76E;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* Labels are lighter so gold stays an accent */
+
+#order-main label {
+    color: #F5EFE4;
+}
+
+/* Inputs */
+
+#order-main .form-control,
+#order-main .form-select {
+    background: #263D5B;
+    color: #FFFFFF;
+    border: 1px solid rgba(217, 183, 110, .65);
+}
+
+#order-main .form-control::placeholder {
+    color: #C8C2B8;
+}
+
+#order-main .form-control:focus,
+#order-main .form-select:focus {
+    background: #263D5B;
+    color: #FFFFFF;
+    border-color: #D9B76E;
+    box-shadow: 0 0 0 3px rgba(217, 183, 110, .14);
+}
+
+/* Radio + Checkbox */
+
+#order-main .form-check-input:checked {
+    background-color: #D9B76E;
+    border-color: #D9B76E;
+}
+
+/* Buttons */
+
+#order-main .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#order-main .form-actions .btn {
+    flex: 1;
+    background: transparent;
+    color: #D9B76E;
+    border: 1px solid #D9B76E;
+    border-radius: 8px;
+    transition: background .2s ease, color .2s ease;
+}
+
+#order-main .form-actions .btn:hover {
+    background: #D9B76E;
+    color: #101F35;
+}
