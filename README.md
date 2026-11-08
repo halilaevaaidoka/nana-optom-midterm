@@ -697,3 +697,11 @@ Continue using the existing repository: https://github.com/yesmagambetasiya-hub/
 The assignment requires commits from each team member, at least four commits across three different days for team work (six commits if working alone). The defense is live: demonstrate delegation, effects, validation, and explain jQuery methods and their plain-JavaScript equivalents.
 AI Disclosure
 AI assistance was used for explanations, code suggestions, debugging discussions, and documentation. The course assignment restricts AI-generated code and requires every AI question to be recorded. The team must review its use against that policy and be able to explain the final implementation. See AI_USAGE_LOG.md for the documented interactions and items requiring verification.
+
+## Endterm extension — wholesale budget planner
+- `js/budget-planner.js`: new plain-JavaScript, data-driven wholesale budget calculator on `products.html`.
+- Uses existing product data, dynamically creates all markup, computes total, maximum affordable quantity and remaining budget, shows invalid and over-budget states.
+- Demonstrates objects/arrays, loops, functions with parameters and return values, conditions, computed values, delegated `input`/`change`/`click` events and `event.target`.
+- `js/products.js`, `js/main.js`, `js/feedback.js` and `js/login.js` are plain JavaScript; `js/about.js` and `js/order.js` use jQuery.
+- The planner is an estimate only: it does not claim discounts, inventory availability or order submission.
+- Verify in a browser on mobile and desktop before submission; review each existing feature and its console output.

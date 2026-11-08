@@ -116,3 +116,8 @@ The assignment restricts AI-generated code and requires AI questions to be docum
 ## 6. Conclusion
 
 AI was used as a learning, debugging and documentation assistant during Assignment 6. The team remains responsible for the implementation, testing and explanation of the submitted work.
+
+## 2026-11-08 — Endterm extension
+- Asked AI to inspect the existing project ZIP and prepare a copy-ready Endterm enhancement after confirming instructor permission.
+- AI created `js/budget-planner.js`, linked it from `products.html`, and updated project documentation.
+- Human review and live-browser verification are required before submission.

@@ -298,10 +298,13 @@ translateStaticPage();
 
 console.log('NANA OPTOM language:', currentLanguage);
 
- // HOME PAGE — 3 LANGUAGE TRANSLATIONS
+// HOME PAGE — 3 LANGUAGE TRANSLATIONS
 
 const homeTranslations = {
   en: {
+    heroLabel: 'PREMIUM BEAUTY COLLECTION',
+    heroDescription: 'Discover premium cosmetics and skincare products for every style, need, and budget. NANA OPTOM brings beauty and quality together.',
+    heroButton: 'SHOP NOW',
     pageTitle: 'NANA OPTOM | Home',
     welcomeTitle: 'Welcome to NANA OPTOM',
     welcomeText:
@@ -328,6 +331,9 @@ const homeTranslations = {
   },
 
   ru: {
+    heroLabel: 'ПРЕМИАЛЬНАЯ КОЛЛЕКЦИЯ КОСМЕТИКИ',
+    heroDescription: 'Откройте для себя качественную декоративную и уходовую косметику на любой вкус, потребность и бюджет. NANA OPTOM объединяет красоту и качество.',
+    heroButton: 'КУПИТЬ СЕЙЧАС',
     pageTitle: 'NANA OPTOM | Главная',
     welcomeTitle: 'Добро пожаловать в NANA OPTOM',
     welcomeText:
@@ -354,6 +360,9 @@ const homeTranslations = {
   },
 
   kk: {
+    heroLabel: 'ПРЕМИУМ КОСМЕТИКА ТОПТАМАСЫ',
+    heroDescription: 'Кез келген талғамға, қажеттілікке және бюджетке сай сәндік және күтім косметикасын таңдаңыз. NANA OPTOM сұлулық пен сапаны біріктіреді.',
+    heroButton: 'ТАУАРЛАРДЫ ҚАРАУ',
     pageTitle: 'NANA OPTOM | Басты бет',
     welcomeTitle: 'NANA OPTOM дүкеніне қош келдіңіз',
     welcomeText:
@@ -389,6 +398,33 @@ if (
   const ht = homeTranslations[currentLanguage];
 
   document.title = ht.pageTitle;
+
+  // Translate the hero copy without changing the brand name or CSS.
+  const heroTexts = {
+    label: 'PREMIUM BEAUTY COLLECTION',
+    description: 'Discover premium cosmetics and skincare products',
+    button: 'SHOP NOW'
+  };
+
+  const leafElements = Array.from(document.querySelectorAll('body *'))
+    .filter(element => element.children.length === 0);
+
+  const heroLabel = leafElements.find(element =>
+    element.textContent.trim() === heroTexts.label
+  );
+
+  const heroDescription = leafElements.find(element =>
+    element.textContent.trim().startsWith(heroTexts.description)
+  );
+
+  const heroButton = Array.from(document.querySelectorAll('a, button'))
+    .find(element =>
+      element.textContent.trim().startsWith(heroTexts.button)
+    );
+
+  if (heroLabel) heroLabel.textContent = ht.heroLabel;
+  if (heroDescription) heroDescription.textContent = ht.heroDescription;
+  if (heroButton) heroButton.textContent = ht.heroButton + ' →';
 
   // Helper: translate section heading and paragraph
 
@@ -501,135 +537,136 @@ if (
     }
   }
 }
+
 // SHARED NAVBAR — SAME STYLE AS ORDER
 
 (() => {
-    const nav = document.querySelector('.navbar');
-    const container = nav?.querySelector('.container');
+  const nav = document.querySelector('.navbar');
+  const container = nav?.querySelector('.container');
 
-    if (!container) return;
+  if (!container) return;
 
-    // Keep the brand name unchanged in every language.
-    const brand = container.querySelector('.navbar-brand');
+  // Keep the brand name unchanged in every language.
+  const brand = container.querySelector('.navbar-brand');
 
-    if (brand) {
-        brand.textContent = 'NANA OPTOM';
+  if (brand) {
+    brand.textContent = 'NANA OPTOM';
+  }
+
+  // Order already has its own tools and language buttons.
+  if (container.querySelector('.order-nav-tools')) return;
+
+  const login = container.querySelector('.login-link');
+  const oldLanguageSelect = container.querySelector('select');
+
+  const tools = document.createElement('div');
+  tools.className = 'order-nav-tools';
+
+  // Cart link
+  const cartLink = document.createElement('a');
+  cartLink.className = 'order-cart-link';
+  cartLink.href = 'order.html#cart-summary';
+  cartLink.setAttribute(
+    'aria-label',
+    {
+      en: 'View order summary',
+      ru: 'Посмотреть заказ',
+      kk: 'Тапсырысты қарау'
+    }[currentLanguage] || 'View order summary'
+  );
+
+  cartLink.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 3h2l2 12h12l2-8H6"></path>
+      <circle cx="9" cy="20" r="1"></circle>
+      <circle cx="18" cy="20" r="1"></circle>
+    </svg>
+    <span class="shared-cart-count">0</span>
+  `;
+
+  function updateCartCount() {
+    let count = 0;
+
+    try {
+      const cart = JSON.parse(
+        sessionStorage.getItem('nana-order-cart') || '[]'
+      );
+
+      if (Array.isArray(cart)) {
+        count = cart.reduce((sum, item) => {
+          const quantity = Number(item.quantity);
+
+          return sum + (
+            Number.isInteger(quantity) && quantity > 0
+              ? quantity
+              : 0
+          );
+        }, 0);
+      }
+    } catch {
+      count = 0;
     }
 
-    // Order already has its own tools and language buttons.
-    if (container.querySelector('.order-nav-tools')) return;
+    cartLink.querySelector('.shared-cart-count').textContent = count;
+  }
 
-    const login = container.querySelector('.login-link');
-    const oldLanguageSelect = container.querySelector('select');
+  updateCartCount();
+  window.addEventListener('pageshow', updateCartCount);
 
-    const tools = document.createElement('div');
-    tools.className = 'order-nav-tools';
+  // Three language buttons instead of a dropdown.
+  const languages = document.createElement('div');
+  languages.className = 'order-languages';
+  languages.setAttribute('aria-label', 'Language');
 
-    // Cart link
-    const cartLink = document.createElement('a');
-    cartLink.className = 'order-cart-link';
-    cartLink.href = 'order.html#cart-summary';
-    cartLink.setAttribute(
-        'aria-label',
-        {
-            en: 'View order summary',
-            ru: 'Посмотреть заказ',
-            kk: 'Тапсырысты қарау'
-        }[currentLanguage] || 'View order summary'
-    );
+  [
+    ['kk', 'ҚАЗ'],
+    ['ru', 'РУС'],
+    ['en', 'ENG']
+  ].forEach(([value, label]) => {
+    const button = document.createElement('button');
 
-    cartLink.innerHTML = `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 3h2l2 12h12l2-8H6"></path>
-            <circle cx="9" cy="20" r="1"></circle>
-            <circle cx="18" cy="20" r="1"></circle>
-        </svg>
-        <span class="shared-cart-count">0</span>
-    `;
+    button.type = 'button';
+    button.textContent = label;
+    button.dataset.orderLang = value;
 
-    function updateCartCount() {
-        let count = 0;
+    const selected = value === currentLanguage;
 
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+
+    button.addEventListener('click', () => {
+      if (oldLanguageSelect) {
+        oldLanguageSelect.value = value;
+
+        // Use the existing language change handler.
+        oldLanguageSelect.dispatchEvent(
+          new Event('change', { bubbles: true })
+        );
+      } else {
         try {
-            const cart = JSON.parse(
-                sessionStorage.getItem('nana-order-cart') || '[]'
-            );
-
-            if (Array.isArray(cart)) {
-                count = cart.reduce((sum, item) => {
-                    const quantity = Number(item.quantity);
-
-                    return sum + (
-                        Number.isInteger(quantity) && quantity > 0
-                            ? quantity
-                            : 0
-                    );
-                }, 0);
-            }
+          localStorage.setItem('nana-language', value);
         } catch {
-            count = 0;
+          // Storage may be unavailable.
         }
 
-        cartLink.querySelector('.shared-cart-count').textContent = count;
-    }
-
-    updateCartCount();
-    window.addEventListener('pageshow', updateCartCount);
-
-    // Three language buttons instead of a dropdown.
-    const languages = document.createElement('div');
-    languages.className = 'order-languages';
-    languages.setAttribute('aria-label', 'Language');
-
-    [
-        ['kk', 'ҚАЗ'],
-        ['ru', 'РУС'],
-        ['en', 'ENG']
-    ].forEach(([value, label]) => {
-        const button = document.createElement('button');
-
-        button.type = 'button';
-        button.textContent = label;
-        button.dataset.orderLang = value;
-
-        const selected = value === currentLanguage;
-
-        button.classList.toggle('active', selected);
-        button.setAttribute('aria-pressed', String(selected));
-
-        button.addEventListener('click', () => {
-            if (oldLanguageSelect) {
-                oldLanguageSelect.value = value;
-
-                // Use the existing language change handler.
-                oldLanguageSelect.dispatchEvent(
-                    new Event('change', { bubbles: true })
-                );
-            } else {
-                try {
-                    localStorage.setItem('nana-language', value);
-                } catch {
-                    // Storage may be unavailable.
-                }
-
-                window.location.reload();
-            }
-        });
-
-        languages.appendChild(button);
+        window.location.reload();
+      }
     });
 
-    if (oldLanguageSelect) {
-        oldLanguageSelect.hidden = true;
-        oldLanguageSelect.style.setProperty(
-            'display',
-            'none',
-            'important'
-        );
-    }
+    languages.appendChild(button);
+  });
 
-    tools.append(cartLink, languages);
-    container.insertBefore(tools, login || null);
+  if (oldLanguageSelect) {
+    oldLanguageSelect.hidden = true;
+    oldLanguageSelect.style.setProperty(
+      'display',
+      'none',
+      'important'
+    );
+  }
+
+  tools.append(cartLink, languages);
+  container.insertBefore(tools, login || null);
 })();
 
 /* NANA OPTOM — SHARED CART COUNTER */
