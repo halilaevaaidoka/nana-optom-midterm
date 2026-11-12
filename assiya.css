@@ -1,0 +1,459 @@
+
+/* =========================================
+   NANA OPTOM — ABOUT & FEEDBACK
+   Navy & Gold Theme
+========================================= */
+
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+/* Content Cards */
+
+#about-main section,
+#about-main article {
+    background: #172B46;
+    color: #F5EFE4;
+    border: 1px solid rgba(217, 183, 110, 0.45);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+}
+
+/* Accent Text */
+
+.brand-year,
+.brand-photo figcaption,
+.facts-section dt {
+    color: #D9B76E;
+    font-weight: 700;
+}
+
+/* Store Photo */
+
+.brand-photo {
+    margin: 0;
+    text-align: center;
+}
+
+.brand-photo img {
+    display: block;
+    margin: 0 auto 16px;
+    border-radius: 10px;
+}
+
+/* Buttons */
+
+.gold-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 22px;
+    background: #D9B76E;
+    color: #101F35;
+    border: 1px solid #D9B76E;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.gold-button:hover {
+    background: #F4D999;
+    color: #101F35;
+}
+
+/* Lists and Facts */
+
+.order-steps-section li {
+    margin-bottom: 10px;
+}
+
+.facts-section dd {
+    margin-left: 0;
+    color: #F5EFE4;
+}
+
+
+/* =========================================
+   FEEDBACK PAGE — ORDER STYLE
+========================================= */
+
+/* Main Layout */
+
+#feedback-main {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto !important;
+    padding: 24px 40px !important;
+}
+
+#feedback-section {
+    width: 100%;
+}
+
+/* Page Title */
+
+#feedback-section > h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 3vw, 48px);
+    font-weight: 700;
+    text-align: center;
+    color: #F5BC57;
+    margin: 12px 0 16px;
+}
+
+/* Description */
+
+#feedback-section > p {
+    max-width: 950px;
+    margin: 0 auto 12px;
+    text-align: center;
+    color: #AFC1D3;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Form Layout */
+
+#feedback-form {
+    width: 100%;
+    max-width: 1500px;
+    margin: 45px auto 0;
+    row-gap: 32px;
+}
+
+/* Form Cards */
+
+#feedback-main .feedback-group {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px !important;
+
+    background: linear-gradient(
+        160deg,
+        #0B253F,
+        #071B30
+    );
+
+    border: 1px solid #34506A;
+    border-radius: 16px;
+
+    transition: border-color 0.25s ease;
+}
+
+#feedback-main .feedback-group:hover {
+    border-color: #D9B76E;
+}
+
+/* Card Headings */
+
+#feedback-main .feedback-group legend {
+    float: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: auto;
+    max-width: 100%;
+    padding: 0 10px;
+    margin-bottom: 12px;
+
+    color: #F5BC57;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Gold Number Circles */
+
+#feedback-main .feedback-group legend::before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+    background: #F5BC57;
+    color: #071B30;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* Section Numbers */
+
+#feedback-form > div:nth-child(1) legend::before {
+    content: "1";
+}
+
+#feedback-form > div:nth-child(2) legend::before {
+    content: "2";
+}
+
+#feedback-form > div:nth-child(3) legend::before {
+    content: "3";
+}
+
+/* Labels */
+
+#feedback-main .feedback-group label {
+    color: #E6EDF4;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Inputs and Select */
+
+#feedback-main .feedback-group .form-control,
+#feedback-main .feedback-group .form-select {
+    width: 100%;
+    min-height: 52px;
+
+    background: #143250;
+    color: #FFFFFF;
+
+    border: 1px solid #B18C4E;
+    border-radius: 12px;
+
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+/* Textarea */
+
+#feedback-main .feedback-group textarea.form-control {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Placeholder */
+
+#feedback-main .form-control::placeholder {
+    color: #AEB DCE;
+}
+
+/* Focus */
+
+#feedback-main .form-control:focus,
+#feedback-main .form-select:focus {
+    background: #193C5E;
+    color: #FFFFFF;
+    border-color: #F5BC57;
+    box-shadow: 0 0 0 3px rgba(245, 188, 87, 0.16);
+}
+
+/* Radio and Checkbox */
+
+#feedback-main .form-check-input {
+    border: 1px solid #C59A4E;
+    background-color: transparent;
+}
+
+#feedback-main .form-check-input:checked {
+    background-color: #F5BC57;
+    border-color: #F5BC57;
+}
+
+#feedback-main .form-check-label {
+    color: #F5EFE4;
+}
+
+/* Text */
+
+#feedback-main .feedback-group p {
+    color: #AFC1D3;
+}
+
+/* Submit Button */
+
+#feedback-main #submit-feedback {
+    background: #F5BC57;
+    border: 1px solid #F5BC57;
+    color: #071B30;
+
+    font-weight: 700;
+    border-radius: 11px;
+    padding: 15px 38px;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}
+
+#feedback-main #submit-feedback:hover {
+    background: #FFD27A;
+    transform: translateY(-2px);
+}
+
+/* Reset Button */
+
+#feedback-main #reset-feedback {
+    color: #F5BC57;
+    border: 1px solid #F5BC57;
+    border-radius: 11px;
+    padding: 15px 38px;
+}
+
+#feedback-main #reset-feedback:hover {
+    background: #F5BC57;
+    color: #071B30;
+}
+
+/* Confirmation */
+
+#feedback-confirmation {
+    background: #102B46;
+    border: 1px solid #34506A;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+#feedback-confirmation h3 {
+    color: #F5BC57;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 991px) {
+
+    #feedback-main .feedback-group {
+        min-height: auto;
+    }
+
+    #feedback-form {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #feedback-main {
+        padding: 20px 16px !important;
+    }
+
+    #feedback-form {
+        margin-top: 28px;
+    }
+
+    #feedback-section > h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #feedback-main .feedback-group {
+        padding: 24px 16px !important;
+    }
+
+    #feedback-main .feedback-group legend {
+        font-size: 18px;
+    }
+
+    #feedback-main .feedback-group legend::before {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+        font-size: 15px;
+    }
+}
+
+/* CUSTOMER REVIEWS — NANA OPTOM */
+
+#customer-reviews {
+    width: 100%;
+    margin: 65px auto 40px;
+}
+
+#customer-reviews h2 {
+    color: #f4bf63;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+/* Three cards in one row */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Review cards */
+
+#customer-reviews .review-card {
+    background: #173653;
+    border: 1px solid rgba(244, 191, 99, 0.35);
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 0;
+    height: 100%;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+#customer-reviews .review-card:hover {
+    transform: translateY(-5px);
+    border-color: #f4bf63;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Customer name */
+
+#customer-reviews .review-card h3 {
+    color: #f4bf63;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    margin: 0 0 18px;
+}
+
+/* Review text */
+
+#customer-reviews .review-card p {
+    color: #e8edf4;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Tablet */
+
+@media (max-width: 991px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Phone */
+
+@media (max-width: 600px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #customer-reviews h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #customer-reviews .review-card {
+        padding: 22px;
+    }
+}
