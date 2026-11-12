@@ -208,6 +208,62 @@
 
         </form>
 
+        <p class="text-center mt-3">
+    Don't have an account?
+    <button type="button" id="show-signup" class="btn btn-link">
+        Sign Up
+    </button>
+</p>
+
+<section id="signup-section" hidden>
+    <h2>Create Account</h2>
+
+    <form id="signup-form">
+        <div class="mb-3">
+            <label for="signup-name" class="form-label">Full Name</label>
+            <input id="signup-name" class="form-control"
+                   type="text" autocomplete="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="signup-email" class="form-label">Email</label>
+            <input id="signup-email" class="form-control"
+                   type="email" autocomplete="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="signup-phone" class="form-label">Phone Number</label>
+            <input id="signup-phone" class="form-control"
+                   type="tel" inputmode="numeric"
+                   maxlength="16" value="+7 " required>
+        </div>
+
+        <div class="mb-3">
+            <label for="signup-password" class="form-label">Password</label>
+            <input id="signup-password" class="form-control"
+                   type="password" minlength="8"
+                   autocomplete="new-password" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="signup-confirm" class="form-label">Confirm Password</label>
+            <input id="signup-confirm" class="form-control"
+                   type="password" minlength="8"
+                   autocomplete="new-password" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning w-100">
+            Sign Up
+        </button>
+
+        <p id="signup-result" class="mt-3" role="status"></p>
+    </form>
+
+    <button type="button" id="back-to-login" class="btn btn-link">
+        Back to Login
+    </button>
+</section>
+
 
         <!-- Future JavaScript will display login result here -->
         <div id="login-result"

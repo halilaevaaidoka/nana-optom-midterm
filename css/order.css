@@ -890,4 +890,44 @@
         grid-column: 4;
         grid-row: 1;
     }
+    /* Kazakhstan phone number */
+.phone-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #d9b76e;
+    border-radius: 13px;
+    background: #263f5f;
+    overflow: hidden;
+}
+
+.phone-prefix {
+    flex: 0 0 auto;
+    padding: 15px 0 15px 17px;
+    color: #f0c66e;
+    font-weight: 700;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.phone-field #customer-phone {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: white !important;
+    padding: 15px 12px !important;
+    border-radius: 0 !important;
+}
+
+.phone-field:focus-within {
+    border-color: #f0c66e;
+    box-shadow: 0 0 0 2px rgba(240, 198, 110, 0.15);
+}
+
+.phone-field #customer-phone::placeholder {
+    color: #b9c7d8;
+}
 }

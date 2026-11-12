@@ -227,4 +227,45 @@
         left: 15px;
         width: auto;
     }
+
+    #show-signup,
+#back-to-login {
+    color: #e4bc69;
+    text-decoration: underline;
+}
+
+#signup-section {
+    margin-top: 25px;
+}
+
+#signup-section[hidden] {
+    display: none !important;
+}
+
+#signup-section h2 {
+    color: #e4bc69;
+    margin-bottom: 20px;
+}
+
+#signup-result {
+    color: #e4bc69;
+    font-weight: 500;
+}
+
+#signup-section .form-control {
+    background-color: #263f5f;
+    color: white;
+    border: 1px solid #d9b76e;
+    border-radius: 12px;
+    padding: 14px;
+}
+
+    #signup-section .form-control:focus {
+    background-color: #263f5f;
+    color: white;
+    border-color: #f0c66e;
+    box-shadow: 0 0 0 2px rgba(240, 198, 110, 0.15);
+    }
+
+    
 }

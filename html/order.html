@@ -127,18 +127,17 @@
                            required>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="customer-phone">
-                        Phone Number
-                    </label>
-                    <input class="form-control"
-                           id="customer-phone"
-                           name="customer-phone"
-                           type="tel"
-                           placeholder="+7 700 000 00 00"
-                           autocomplete="tel"
-                           required>
-                </div>
+                <input
+                    class="form-control"
+                    id="customer-phone"
+                    name="customer-phone"
+                    type="tel"
+                    inputmode="numeric"
+                    maxlength="16"
+                    value="+7 "
+                    autocomplete="tel"
+                    required
+                >
 
                 <div class="mb-3">
                     <label class="form-label" for="customer-city">
